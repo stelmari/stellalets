@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('Image/background.jpg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: rgb(0, 0, 0); /* Change text color for better contrast */
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); /*shadow effect*/
+}
+
+h3 {
+    color: red;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); /*shadow effect*/
+}
+
+p {
+    color: white;
+    text-align: justify;
+    margin: 0 auto;
+    width: 80%;
+    text-shadow: 2px 2px 5px rgb(114, 114, 114); /*shadow effect*/
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between tiles */
+    padding: 20px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgb(0, 0, 0); /* Shadow effect */
+    border: 5px solid rgb(0, 0, 0); /* Optional border */
+}
+
+.button {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.582); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 3px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Maximum width for larger screens */
+    border-radius: 10px; /* Rounded corners for modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: relative; /* Position relative for close button */
+}
+
+/* Close button styling */
+.close {
+    color: #aaa; /* Light gray color */
+    float: right; /* Align to the right */
+    font-size: 28px; /* Font size for close button */
+    font-weight: bold; /* Bold text */
+}
+
+.close a {
+    text-decoration: none; /* Remove underline */
+    color: #aaa; /* Match close button color */
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 0, 0); /* Change color on hover */
+    text-decoration: none; /* No underline on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Media Queries for further responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Wider on smaller screens */
+        padding: 15px; /* Less padding on smaller screens */
+    }
+
+    .close {
+        font-size: 24px; /* Smaller close button on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%; /* Almost full width on mobile */
+        padding: 10px; /* Less padding on mobile */
+    }
+
+    .close {
+        font-size: 20px; /* Smaller close button on mobile */
+    }
+}
+
+.image-grid .image-container {
+    border: 2px solid rgb(201, 201, 201);
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
+.image-grid .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-grid .image-container:hover img {
+    transform: scale(1.1); /* Zoom-in effect */
+}
+
+.image-grid .image-container button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.image-grid .image-container:hover button {
+    opacity: 1;
+}
